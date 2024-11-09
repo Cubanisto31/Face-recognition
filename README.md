@@ -10,7 +10,7 @@
 
 3) Le second commit a permis de partage le programme qui permet de verifier si une le visage d'une photo est bien celui de Ronan ou pas
 
-4) Le résultat
+4) Le résultat :
 
 ![image](https://github.com/user-attachments/assets/2a242577-66ed-439f-9431-5d76769baa63)
 
