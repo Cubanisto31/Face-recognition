@@ -12,6 +12,12 @@
 
 4) Le résultat
 
+![image](https://github.com/user-attachments/assets/2a242577-66ed-439f-9431-5d76769baa63)
+
+![image](https://github.com/user-attachments/assets/75953bd2-82b9-4a95-bc58-0891dbae4ea8)
+
+
+
    
 **NB** : L'importation du package *face_recognition* a été laborieuse car (i) il nécessite le package *dlib* qui (ii) nécessite le package *CMake* qui (iii) nécessite un compilateur C++ pour tourner.
 Il a donc fallu télécharger un compilateur C++ puis run CMake et dlib. Ensuite il a fallu integrer le Kernel de jupyter notebook dans le PATH qui contenait dlib afin de pouvoir importer le package *face_recognition*.
