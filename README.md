@@ -2,6 +2,38 @@
 
 *L'objet de ce dépôt est de partager une tentative de programme permettant de reconnaitre les visages des personnes sur une video.*
 
+1) Premier objectif : réussir à repérer un visage sur une image
+
+``` python
+import face_recognition
+import cv2
+import matplotlib.pyplot as plt
+
+# Charger l'image
+image_path = r"your_file_direction.jpg"
+image = face_recognition.load_image_file(image_path)
+
+# Détecter les positions des visages
+face_locations = face_recognition.face_locations(image)
+
+# Charger l'image dans un format compatible avec OpenCV (RGB à BGR)
+image_cv2 = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+
+# Dessiner des rectangles autour de chaque visage détecté
+for face_location in face_locations:
+    top, right, bottom, left = face_location
+    # Dessiner un rectangle vert
+    cv2.rectangle(image_cv2, (left, top), (right, bottom), (0, 255, 0), 2)
+    
+
+# Afficher l'image avec matplotlib
+plt.imshow(cv2.cvtColor(image_cv2, cv2.COLOR_BGR2RGB))  # Convertir en RGB pour l'affichage correct
+plt.axis('off')  # Cacher les axes
+plt.show()
+```
+
+![Capture d’écran 2024-11-11 135759](https://github.com/user-attachments/assets/b2554c18-52fd-45a2-9f90-68a38ce811dd)
+
 1) Le first commit a permis de partager le premier programme fonctionnel qui encadre le visage de Ronan (visage dans Ronan.jpg) avec un carré vert.
 
 2) Le résultat :
