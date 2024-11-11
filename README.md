@@ -72,6 +72,8 @@ else:
 ![Capture d’écran 2024-11-11 140629](https://github.com/user-attachments/assets/20ee3eb1-862b-419e-ae8e-f54cc8c0983e)
 
 
+## Troisième objectif : repérer un visage sur une vidéo
+
 
 
    
