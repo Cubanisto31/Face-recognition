@@ -2,7 +2,7 @@
 
 *L'objet de ce dépôt est de partager une tentative de programme permettant de reconnaitre les visages des personnes sur une video.*
 
-1) Premier objectif : réussir à repérer un visage sur une image
+1) Premier objectif : repérer un visage sur une image
 
 ``` python
 import face_recognition
@@ -34,15 +34,49 @@ plt.show()
 
 ![Capture d’écran 2024-11-11 135759](https://github.com/user-attachments/assets/b2554c18-52fd-45a2-9f90-68a38ce811dd)
 
-1) Le first commit a permis de partager le premier programme fonctionnel qui encadre le visage de Ronan (visage dans Ronan.jpg) avec un carré vert.
+2) Deuxième objectif : vérifier la correspondance d'un visage
 
-2) Le résultat :
+``` python
+
+import matplotlib.image as mpimg
+
+# Chemin de l'image
+image_path = r"C:\Users\paulf\Downloads\Inconnu_1.jpg"
+
+# Charger et afficher l'image
+img = mpimg.imread(image_path)
+plt.imshow(img)
+plt.axis('off')  # Masquer les axes
+plt.show()
+
+import face_recognition
+
+picture_of_ronan = face_recognition.load_image_file(r"C:\Users\paulf\Downloads\Face-recognition\Ronan.jpg")
+ronan_face_encoding = face_recognition.face_encodings(picture_of_ronan)[0]
+
+# my_face_encoding contient désormais un « encodage » universel des traits du visage qui peut être comparé à n'importe quelle autre photo de visage !
+
+unknown_picture = face_recognition.load_image_file(r"C:\Users\paulf\Downloads\Face-recognition\Inconnu_1.jpg") 
+unknown_face_encoding = face_recognition.face_encodings(unknown_picture)[0]
+
+# Maintenant nous pouvons voir que les deux encodages de visage sont de la même personne avec `compare_faces` !
+
+results = face_recognition.compare_faces([ronan_face_encoding], unknown_face_encoding)
+
+if results[0] == True:
+    print("C'est Ronan !")
+else:
+    print("Ce n'est pas Ronan !")
+```
+
+![Capture d’écran 2024-11-11 140629](https://github.com/user-attachments/assets/20ee3eb1-862b-419e-ae8e-f54cc8c0983e)
+
   
    ![output_0_0](https://github.com/user-attachments/assets/fd77e652-7f49-4682-8e9c-b1e748c400dd)
 
-3) Le second commit a permis de partage le programme qui permet de verifier si une le visage d'une photo est bien celui de Ronan ou pas
+4) Le second commit a permis de partage le programme qui permet de verifier si une le visage d'une photo est bien celui de Ronan ou pas
 
-4) Le résultat :
+5) Le résultat :
 
 ![image](https://github.com/user-attachments/assets/2a242577-66ed-439f-9431-5d76769baa63)
 
