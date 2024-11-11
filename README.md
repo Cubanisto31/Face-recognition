@@ -2,7 +2,7 @@
 
 *L'objet de ce dépôt est de partager une tentative de programme permettant de reconnaitre les visages des personnes sur une video.*
 
-1) Premier objectif : repérer un visage sur une image
+## Premier objectif : repérer un visage sur une image
 
 ``` python
 import face_recognition
@@ -34,7 +34,7 @@ plt.show()
 
 ![Capture d’écran 2024-11-11 135759](https://github.com/user-attachments/assets/b2554c18-52fd-45a2-9f90-68a38ce811dd)
 
-2) Deuxième objectif : vérifier la correspondance d'un visage
+## Deuxième objectif : vérifier la correspondance d'un visage
 
 ``` python
 
