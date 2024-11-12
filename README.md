@@ -131,7 +131,9 @@ cv2.destroyAllWindows()
 https://github.com/user-attachments/assets/7e6b34a7-7878-4690-bbe4-e24a53df515a
 
 
-   
+## Quatrième objectif : repérer Ronan dans une vidéo
+
+
 **NB** : L'importation du package *face_recognition* a été laborieuse car (i) il nécessite le package *dlib* qui (ii) nécessite le package *CMake* qui (iii) nécessite un compilateur C++ pour être exécuté .
 Il a donc fallu télécharger un compilateur C++ puis run _CMake_ et _dlib_. Ensuite il a fallu integrer le Kernel de jupyter notebook dans le PATH qui contenait dlib afin de pouvoir importer le package *face_recognition*.
 Plus d'informations sur les usages et conditions d'installation de _dlib_ [ici](http://dlib.net/). 
