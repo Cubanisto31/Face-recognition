@@ -74,7 +74,7 @@ else:
 
 ## Troisième objectif : repérer un visage sur une vidéo
 
-Cette étape a été plus difficile notamment en raison de la problématique des ressources de calcul nécessaires pour faire tourner le code. Finalement une solution consiste à faire la reconnaissance faciale _frame_ par _frame_ puis réagreger le résultat pour en faire une vidéo dans laquelle les visages sont repérés. 
+Cette étape a été plus difficile notamment en raison de la problématique des ressources de calcul nécessaires pour faire tourner le code. La solution proposée consiste à faire la reconnaissance faciale _frame_ par _frame_ puis réagreger le résultat pour en faire une vidéo dans laquelle les visages sont repérés. 
 
 ``` python
 # Repérer les visages dans une vidéo
