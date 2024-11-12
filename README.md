@@ -74,6 +74,61 @@ else:
 
 ## Troisième objectif : repérer un visage sur une vidéo
 
+Cette étape a été plus difficile notamment en raison de la problématique des ressources de calcul nécessaires pour faire tourner le code. Finalement une solution consiste à faire la reconnaissance faciale _frame_ par _frame_ puis réagreger le résultat pour en faire une vidéo dans laquelle les visages sont repérés. 
+
+``` python
+# Repérer les visages dans une vidéo
+import face_recognition
+import cv2
+
+# Chemin de la vidéo
+video_path = r"C:\Users\paulf\Downloads\Video test Ronan et Bastian.mp4"
+video_capture = cv2.VideoCapture(video_path)
+
+# Obtenir les dimensions et la fréquence de la vidéo
+frame_width = int(video_capture.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(video_capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = int(video_capture.get(cv2.CAP_PROP_FPS))
+
+# Définir le codec et créer un objet VideoWriter pour enregistrer la vidéo de sortie
+output_path = r"C:\Users\paulf\Downloads\Video_detected_output1.avi"
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+output_video = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
+
+# Lire chaque frame de la vidéo
+while video_capture.isOpened():
+    ret, frame = video_capture.read()
+    if not ret:
+        break  # Sortir de la boucle si la vidéo est terminée
+
+    # Convertir la frame en RGB (face_recognition utilise RGB, OpenCV utilise BGR)
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+    # Détection des visages
+    face_locations = face_recognition.face_locations(rgb_frame)
+
+    # Dessiner des rectangles autour des visages détectés
+    for (top, right, bottom, left) in face_locations:
+        cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
+
+    # Ajouter la frame avec les visages détectés à la vidéo de sortie
+    output_video.write(frame)
+
+    # Afficher la frame avec les visages détectés (facultatif pour l'enregistrement)
+    cv2.imshow("Video", frame)
+
+    # Quitter la vidéo si 'q' est pressé
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Libérer les ressources
+video_capture.release()
+output_video.release()  # Ne pas oublier de libérer l'objet d'enregistrement vidéo
+cv2.destroyAllWindows()
+```
+
+
+https://github.com/user-attachments/assets/7e6b34a7-7878-4690-bbe4-e24a53df515a
 
 
    
