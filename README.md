@@ -1,6 +1,7 @@
 # Face-recognition
 
 *L'objet de ce dépôt est de partager une tentative de programme permettant de reconnaitre les visages des personnes sur une video.*
+_Il s'agit d'un cas d'usage du package [face_recognition](https://github.com/ageitgey/face_recognition?tab=readme-ov-file)._
 
 ## Premier objectif : repérer un visage sur une image
 
