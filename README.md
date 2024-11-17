@@ -41,7 +41,7 @@ plt.show()
 import matplotlib.image as mpimg
 
 # Chemin de l'image
-image_path = r"your_file_directory"
+image_path = r"your_file_directory_unknown1"
 
 # Charger et afficher l'image
 img = mpimg.imread(image_path)
