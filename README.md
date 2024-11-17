@@ -41,7 +41,7 @@ plt.show()
 import matplotlib.image as mpimg
 
 # Chemin de l'image
-image_path = r"C:\Users\paulf\Downloads\Inconnu_1.jpg"
+image_path = r"your_file_directory"
 
 # Charger et afficher l'image
 img = mpimg.imread(image_path)
@@ -51,12 +51,12 @@ plt.show()
 
 import face_recognition
 
-picture_of_ronan = face_recognition.load_image_file(r"C:\Users\paulf\Downloads\Face-recognition\Ronan.jpg")
+picture_of_ronan = face_recognition.load_image_file(r"your_file_directory")
 ronan_face_encoding = face_recognition.face_encodings(picture_of_ronan)[0]
 
 # my_face_encoding contient désormais un « encodage » universel des traits du visage qui peut être comparé à n'importe quelle autre photo de visage !
 
-unknown_picture = face_recognition.load_image_file(r"C:\Users\paulf\Downloads\Face-recognition\Inconnu_1.jpg") 
+unknown_picture = face_recognition.load_image_file(r"your_file_directory_unknown1") 
 unknown_face_encoding = face_recognition.face_encodings(unknown_picture)[0]
 
 # Maintenant nous pouvons voir que les deux encodages de visage sont de la même personne avec `compare_faces` !
@@ -82,7 +82,7 @@ import face_recognition
 import cv2
 
 # Chemin de la vidéo
-video_path = r"C:\Users\paulf\Downloads\Video test Ronan et Bastian.mp4"
+video_path = r"your_file_directory"
 video_capture = cv2.VideoCapture(video_path)
 
 # Obtenir les dimensions et la fréquence de la vidéo
@@ -91,7 +91,7 @@ frame_height = int(video_capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
 fps = int(video_capture.get(cv2.CAP_PROP_FPS))
 
 # Définir le codec et créer un objet VideoWriter pour enregistrer la vidéo de sortie
-output_path = r"C:\Users\paulf\Downloads\Video_detected_output1.avi"
+output_path = r"your_file_destination_directory.avi"
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
 output_video = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
 
